@@ -1,0 +1,720 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/wolfsbane2ii.ttf);
+  }
+@font-face {
+    font-family: dcFont;
+    src: url(../fonts/Rcb.ttf);
+}
+body{
+    overflow-x: hidden;
+}
+p{
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    border-radius: 40px;
+    color: azure;
+}
+
+/*--------- Header ----------*/
+#header{
+	position: relative;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100px;
+}
+#header .nav-bar{
+	display: flex;
+	align-items: center;
+	justify-content:flex-start;
+	width: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+.brand img{
+    left: 10%;
+    height: 80px;
+    border-radius: 50%;
+}
+#header .nav-bar .heading{
+    align-items: center;
+    justify-content: center;
+    margin-left: 450px;
+}
+
+/* ---------- Player Card -------------*/
+.player-card{
+    margin: 80px;
+    display: grid;
+    width: 60vw;
+    grid-template-columns: repeat(4, 2fr);
+    grid-gap: 20px;
+    align-items: center;
+    overflow: hidden;
+}
+.card{
+    border: none;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    width: 200px;
+    transition: .3s;
+    height: 350px;
+    margin-bottom: 50px;
+}
+.player-pic{
+    height: 200px;
+    width: 200px;
+}
+.player-pic > img{
+    border-radius: 25px;
+    height: 200px;
+}
+.card:hover{
+    transform: translateY(5px);
+    box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+.details > h2{
+    font-family: myFirstFont;
+    text-transform: uppercase;
+    letter-spacing: .1rem;  
+}
+.details > h5{
+    text-align:start;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-transform: uppercase;
+    padding: 5px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.info h1{
+    text-align: center;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: aliceblue;
+}
+.top-plyrs{
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    float: right;
+    margin-top: 150px;
+    margin-right: 20px;
+    padding: 5px;
+    width: 200px;
+}
+.top-plyrs .card{
+    height: 400px;
+}
+.top-plyrs > .player-pic{
+    margin-top: 10px;
+}
+
+/* ------------ Footer --------------*/
+.container{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#footer{
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer{
+	min-height: 150px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+#footer h1{
+	color: white;
+    font-family: dcFont;
+	font-weight: 500;
+	font-size: 3rem;
+	letter-spacing: .1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#footer .social-icon{
+	display: flex;
+	margin-bottom: 30px;
+}
+#footer .social-item{
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+#footer .web{
+    height: 60px;
+    width: 60px;
+}
+#footer .social-item img{
+	filter: grayscale(1);
+	transition: .3s ease filter;
+}
+#footer .social-item:hover img{
+	filter: grayscale(0);
+}
+/*End Footer */
+
+ /* -----------Player Preview -------------*/
+ .player-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.87);
+    display: none;
+    align-items: center;
+    justify-content: center;
+ }
+ .player-preview .preview{
+    display: none;
+    padding:2rem;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    position: relative;
+    margin:2rem;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+ }
+.preview.active{
+    display: block;
+ }
+ .player-preview .preview .player-img img{
+    height: 250px;
+    border: 5px solid rgb(24, 24, 21);
+ }
+ .preview .pl-details p{
+     margin: 5px ;
+     font-size: 1.5rem;
+     text-transform: uppercase;
+ }
+ .preview .pl-details h4{
+    line-height: 1.2;
+    padding: 5px;
+    font-size: 1.2rem;
+    color:rgb(51, 49, 49);
+    text-align: start;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.404);
+    margin-left: 10px;
+ }
+ .player-preview .preview .close{
+    position: absolute;
+    top:1rem; right:1rem;
+    cursor: pointer;
+    color:#444;
+    height: 25px;
+    width: 25px;
+    transition: 0.2s;
+ }
+ .player-preview .preview .close:hover{
+    transform: rotate(90deg);
+ }
+ .player-preview .preview h3{
+    color:#444;
+    padding:.5rem 0;
+    font-size: 2.5rem;
+ }
+
+
+
+/*--------CSK Styles -------------*/
+
+#csk-info .card{
+    background-color: rgba(255, 251, 27, 0.719);
+}
+#csk-card .card{
+    background-color: rgba(255, 251, 25, 0.795);
+}
+#csk-card p{
+    background-color: gold;
+}
+#header .csk{
+	background-color: rgb(255, 208, 0);
+	transition: .3s ease background-color;
+}
+.nav-bar .csk-heading {
+    font-family: myFirstFont;
+    font-size: 2.5rem;
+    color: rgb(110, 107, 248);
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#csk-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/Banner/CSK.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#csk-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#csk-info .info{
+    align-items: flex-start;
+}
+
+/*---------- RCB Styles --------------- */
+
+#rcb-card .card{
+    background-color: rgba(199, 17, 17, 0.836);
+}
+#rcb-info .card{
+    background-color: rgba(221, 27, 43, 0.822);
+}
+#rcb-card p{
+    background-color: rgb(190, 21, 21);
+}
+#rcb-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#rcb-card .player-card  h5{
+    color: #fff;
+}
+#header .rcb{
+	background-color: rgb(241, 15, 15);
+	transition: .3s ease background-color;
+}
+.nav-bar .rcb-heading {
+    font-family: dcFont;
+    font-size: 1.2rem;
+    color: rgb(150, 112, 15);
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align:justify;
+    text-transform: uppercase;
+}
+#rcb-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RCB/Banner/RCBbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#rcb-info h1{
+    color: rgb(190, 141, 17);
+}
+#rcb-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#rcb-info .info{
+    align-items: flex-start;
+}
+
+/*------------ DC Styles --------------- */
+
+#dc-card .card{
+    background-color: rgb(19, 13, 94);
+}
+#dc-info .card{
+    background-color: rgb(19, 15, 240);
+}
+#dc-card p{
+    background-color: rgb(51, 85, 197);
+}
+#dc-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#dc-card .player-card  h5{
+    color: #fff;
+}
+#header .dc{
+	background-color: rgb(38, 66, 224);
+	transition: .3s ease background-color;
+}
+.nav-bar .dc-heading {
+    font-family: dcFont;
+    font-size: 2rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#dc-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Banner/DCbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#dc-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#dc-info .info{
+    align-items: flex-start;
+}
+
+/*--------- GT Styles --------------- */
+
+#gt-card .card{
+    background-color: rgb(13, 82, 94);
+}
+#gt-info .card{
+    background-color: rgb(9, 114, 163);
+}
+#gt-card p{
+    background-color: rgb(10, 120, 172);
+}
+#gt-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#gt-card .player-card  h5{
+    color: #fff;
+}
+#header .gt{
+	background-color: rgb(7, 99, 160);
+	transition: .3s ease background-color;
+}
+.nav-bar .gt-heading {
+    font-family: dcFont;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#gt-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Banner/GTBanner.png);
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#gt-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 50vh;
+}
+#gt-info .info{
+    align-items: flex-start;
+}
+
+/* ----------------- KKR Styles --------------- */
+
+
+#kkr-card .card{
+    background-color: rgb(85, 6, 160);
+}
+#kkr-info .card{
+    background-color: rgb(139, 4, 230);
+}
+#kkr-card p{
+    background-color: rgb(115, 24, 201);
+}
+#kkr-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#kkr-card .player-card  h5{
+    color: #fff;
+}
+#header .kkr{
+	background-color: rgb(173, 21, 211);
+	transition: .3s ease background-color;
+}
+.nav-bar .kkr-heading {
+    font-family: dcFont;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#kkr-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Banner/KKRbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#kkr-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#kkr-info .info{
+    align-items: flex-start;
+}
+
+/*MI Styles --------------- */
+
+#mi-card .card{
+    background-color: rgb(19, 13, 94);
+}
+#mi-info .card{
+    background-color: rgb(19, 15, 240);
+}
+#mi-card p{
+    background-color: rgb(51, 85, 197);
+}
+#mi-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#mi-card .player-card  h5{
+    color: #fff;
+}
+#header .mi{
+	background-color: rgb(38, 66, 224);
+	transition: .3s ease background-color;
+}
+.nav-bar .mi-heading {
+    font-family: dcFont;
+    font-size: 2rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#mi-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Banner/MIbanner.jpg);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#mi-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#mi-info .info{
+    align-items: flex-start;
+}
+
+/*pk Styles --------------- */
+
+#pk-card .card{
+    background-color: rgb(177, 20, 20);
+}
+#pk-info .card{
+    background-color: rgb(196, 24, 33);
+}
+#pk-card p{
+    background-color: rgb(196, 26, 26);
+}
+#pk-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#pk-card .player-card  h5{
+    color: #fff;
+}
+#header .pk{
+	background-color: rgb(224, 38, 38);
+	transition: .3s ease background-color;
+}
+.nav-bar .pk-heading {
+    font-family: dcFont;
+    font-size: 2rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#pk-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/PBKS/Banner/PBKSbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#pk-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#pk-info .info{
+    align-items: flex-start;
+}
+
+/*RR Styles --------------- */
+
+#rr-card .card{
+    background-color: rgb(204, 34, 167);
+}
+#rr-info .card{
+    background-color: rgb(240, 48, 224);
+}
+#rr-card p{
+    background-color: rgb(243, 40, 226);
+}
+#rr-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#rr-card .player-card  h5{
+    color: #fff;
+}
+#header .rr{
+	background-color: rgb(230, 46, 190);
+	transition: .3s ease background-color;
+}
+.nav-bar .rr-heading {
+    font-family: dcFont;
+    font-size: 2rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#rr-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RR/Banner/RRbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#rr-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#rr-info .info{
+    align-items: flex-start;
+}
+
+/* ----------- SRH Styles --------------- */
+
+#srh-card .card{
+    background-color: rgb(221, 79, 23);
+}
+#srh-info .card{
+    background-color: rgb(245, 107, 28);
+}
+#srh-card p{
+    background-color: rgb(224, 102, 46);
+}
+#srh-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: #fff;
+}
+#srh-card .player-card  h5{
+    color: #fff;
+}
+#header .srh{
+	background-color: rgb(228, 93, 31);
+	transition: .3s ease background-color;
+}
+.nav-bar .srh-heading {
+    font-family: dcFont;
+    font-size: 2rem;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#srh-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/SRH/Banner/SRHbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#srh-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 80%;
+}
+#srh-info .info{
+    align-items: flex-start;
+}
+
+/*-------------- LSG Styles --------------- */
+#lsg-card .card{
+    background-color: rgb(187, 183, 247);
+}
+#lsg-info .card{
+    background-color: rgb(165, 164, 252);
+}
+#lsg-card p{
+    background-color: rgb(49, 96, 252);
+}
+#lsg-card .player-card  h2{
+    font-family: dcFont;
+    font-size: 1rem;
+    color: rgb(51, 105, 255);
+}
+#lsg-card .player-card  h5{
+    color: rgb(46, 95, 255);
+}
+#header .lsg{
+	background-color: rgb(27, 126, 255);
+	transition: .3s ease background-color;
+}
+.nav-bar .lsg-heading {
+    font-family: dcFont;
+    font-size: 2rem;
+    color: rgb(245, 245, 245);
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    text-align: justify;
+    text-transform: uppercase;
+}
+#lsg-info .banner{
+    background-image: url(https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Banner/LSGbanner.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#lsg-info .banner .logoimg{
+    position:relative;
+    top: 10px;
+    left: 30px;
+    height: 40vh;
+}
+#lsg-info .info{
+    align-items: flex-start;
+}

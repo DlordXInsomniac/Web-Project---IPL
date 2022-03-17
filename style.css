@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+
+/*navigation-bar */
+#header{
+	position: relative;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100px;
+}
+#header .header{
+	background-color: rgba(38, 120, 243, 0.74);
+	transition: .3s ease background-color;
+}
+#header .nav-bar{
+	display: flex;
+	align-items: center;
+	justify-content:flex-start;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+.brand img{
+    left: 5%;
+    height: 80px;
+}
+.search-box{
+    position: relative;
+    background: #c0c2c5;
+    height: 30px;
+    border-radius: 60px;
+    padding: 10px;
+    left: 70%;
+}
+.search-box img{
+    width: 20px;
+    height: 20px;
+}
+.search-box:hover > .srch-txt{
+    padding: 0 6px;
+}
+.search-box:hover > .srch-btn{
+    background: rgb(146, 144, 144);
+}
+.srch-btn{
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 30px;
+    border-radius: 60px;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    transition: 0.4s;
+}
+.srch-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 200px;
+
+}
+
+/*Card Deign */
+.grid{
+    margin: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    overflow: hidden;
+}
+.grid > .team-card{
+    background: #fff;
+    border: none;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+    text-align: center;
+    width: 300px;
+    transition: transform .3s;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.grid > .team-logo{
+    height: 300px;
+    width: 300px;
+}
+.team-logo > img{
+    border-radius: 25px;
+    height: 300px;
+}
+.grid > .team-card:hover{
+    transform: translateY(5px);
+    box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+}
+.text{
+    padding: 0 20px 20px;
+}
+.text h3{
+    text-transform: uppercase;
+}
